@@ -1,0 +1,188 @@
+import React, { useState } from "react";
+import {
+	StyleSheet,
+	Text,
+	View,
+	StatusBar,
+	TouchableOpacity,
+	KeyboardAvoidingView,
+	TextInput,
+} from "react-native";
+
+export default function App() {
+	const [showPopup, srtShowPoput] = useState(false);
+	const handleButtonPress = () => {
+		setShowPopup(true);
+	};
+	const handlePopupClose = () => {
+		setShowPoput(false);
+	};
+	return (
+		<KeyboardAvoidingView style={styles.container} behavior="padding">
+			<View style={styles.content}>
+				{showPopup ? (
+					<View style={styles.popup}>
+						<TextInput
+							placeholder="Task name"
+							style={styles.input}
+						/>
+						<TextInput
+							placeholder="Task description"
+							style={styles.input}
+						/>
+						<TouchableOpacity style={styles.submitButton}>
+							<Text style={styles.submitButtonText}>Add</Text>
+						</TouchableOpacity>
+					</View>
+				) : (
+					<TouchableOpacity
+						style={styles.button}
+						onPress={handleButtonPress}
+					>
+						<Text style={styles.text}>
+							Add your first task {"\u2795"}
+						</Text>
+					</TouchableOpacity>
+				)}
+			</View>
+		</KeyboardAvoidingView>
+	);
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: "#fff",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	text: {
+		fontSize: 14,
+		color: "#333",
+	},
+	button: {
+		position: "absolute",
+		zIndex: 300,
+		bottom: 40,
+		left: 40,
+		width: 60,
+		height: 60,
+		backgroundColor: "#b02543",
+		// padding: 10,
+		borderRadius: 22,
+		justifyContent: "center",
+		alignItems: "center",
+		borderWidth: 2,
+		borderColor: "363132",
+	},
+	plus: {
+		color: "#fff",
+		fontSize: 40,
+	},
+});
+
+
+________________________________________________________________
+first old content
+
+// <View style={styles.popup}>
+					// 	<TextInput
+					// 		placeholder="Task name"
+					// 		style={styles.input}
+					// 	/>
+					// 	<TextInput
+					// 		placeholder="Task description"
+					// 		style={styles.input}
+					// 	/>
+					// 	<TouchableOpacity style={styles.submitButton}>
+					// 		<Text style={styles.submitButtonText}>Add</Text>
+					// 	</TouchableOpacity>
+					// </View>
+
+                    ________________________________________________________________
+
+                    import React, { useState } from "react";
+import {
+	StyleSheet,
+	Text,
+	View,
+	StatusBar,
+	TouchableOpacity,
+	KeyboardAvoidingView,
+	TextInput,
+} from "react-native";
+
+export default function App() {
+	const [showPopup, setShowPoput] = useState(false);
+	const handleButtonPress = () => {
+		setShowPopup(true);
+	};
+	const handlePopupClose = () => {
+		setShowPoput(false);
+	};
+	return (
+		<KeyboardAvoidingView style={styles.container} behavior="padding">
+			<View style={styles.content}>
+				{showPopup ? (
+					<View>
+						<Text style={styles.text}>asdfasdf</Text>
+					</View>
+				) : (
+					// <View style={styles.popup}>
+					// 	<TextInput
+					// 		placeholder="Task name"
+					// 		style={styles.input}
+					// 	/>
+					// 	<TextInput
+					// 		placeholder="Task description"
+					// 		style={styles.input}
+					// 	/>
+					// 	<TouchableOpacity style={styles.submitButton}>
+					// 		<Text style={styles.submitButtonText}>Add</Text>
+					// 	</TouchableOpacity>
+					// </View>
+					<TouchableOpacity
+						style={styles.button}
+						onPress={handleButtonPress}
+					>
+						{/* <Text style={styles.text}>{"\u2795"}</Text> */}
+						<Text style={styles.text}>+</Text>
+					</TouchableOpacity>
+				)}
+			</View>
+		</KeyboardAvoidingView>
+	);
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: "#fff",
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	text: {
+		fontSize: 30,
+		color: "#fff",
+		// color: "#333",
+	},
+	button: {
+		position: "absolute",
+		zIndex: 300,
+		// bottom: 40,
+		// left: 40,
+		width: 60,
+		height: 60,
+		backgroundColor: "#b02543",
+		// padding: 10,
+		borderRadius: 22,
+		justifyContent: "center",
+		alignItems: "center",
+		borderWidth: 2,
+		borderColor: "363132",
+	},
+	plus: {
+		color: "#fff",
+		fontSize: 40,
+	},
+});

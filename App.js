@@ -9,6 +9,8 @@ import {
 	TextInput,
 } from "react-native";
 
+import Popup from "./components/Popup";
+
 export default function App() {
 	const [showPopup, setShowPopup] = useState(false);
 	const [input1Ref, setInput1Ref] = useState(null);
